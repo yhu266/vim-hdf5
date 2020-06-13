@@ -12,6 +12,7 @@ syntax keyword HDF5Typedef hsize_t
 
 syntax keyword HDF5Function H5Dclose
 syntax keyword HDF5Function H5Dcreate
+syntax keyword HDF5Function H5Dget_space
 syntax keyword HDF5Function H5Dwrite
 syntax keyword HDF5Function H5Fclose
 syntax keyword HDF5Function H5Fcreate
