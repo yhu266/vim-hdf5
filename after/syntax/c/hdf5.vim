@@ -27,15 +27,18 @@ syntax keyword HDF5Function H5Sselect_hyperslab
 syntax keyword HDF5Function H5Tarray_create
 syntax keyword HDF5Function H5Tclose
 
-if version >= 508 || ! exists("hdf5_syntax")
-	if version < 508
-		let hdf5_syntax = 1
-		command -nargs=+ HiLink hi link <argc>
-	else
-		command -nargs=+ HiLink hi def link <args>
-	endif
+if v:version < 508
+	command -nargs=+ HiLink hi link <argc>
+else
+	command -nargs=+ HiLink hi def link <args>
+endif
+
+if exists('g:hdf5_syntax_c')
 	HiLink HDF5Constant Constant
 	HiLink HDF5Typedef Typedef
 	HiLink HDF5Function Function
-	delcommand HiLink
 endif
+
+delcommand HiLink
+
+" vi:ft=vim
